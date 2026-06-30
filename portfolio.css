@@ -1,0 +1,138 @@
+/* =============================================================
+   PORTFOLIO additions — extends the arcade-terminal base.
+   Reuses base tokens (--bg, --ink, --accent, --extrude, fonts).
+============================================================= */
+
+.wrap.portfolio { max-width: 760px; }
+
+/* hero headline + stats */
+.headline-lg{
+  font-family:"Chakra Petch",sans-serif;font-weight:600;font-size:22px;line-height:1.2;
+  letter-spacing:.01em;margin:18px auto 0;max-width:520px;
+}
+.stats{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;
+}
+.stat{
+  flex:1;min-width:96px;max-width:160px;
+  background:var(--bg-2);border:1.5px solid var(--line);border-radius:3px;
+  padding:14px 10px;box-shadow:4px 4px 0 var(--extrude-soft);
+}
+.stat .n{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:22px;color:var(--accent);line-height:1}
+.stat .l{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px}
+
+/* ---------- services grid ---------- */
+.svc-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:560px){ .svc-grid{grid-template-columns:1fr 1fr} }
+
+.svc{
+  background:var(--bg-2);border:1.5px solid var(--line);border-radius:3px;
+  padding:18px 18px 20px;box-shadow:5px 5px 0 var(--extrude-soft);
+  transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  display:flex;flex-direction:column;
+}
+.svc:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--extrude);border-color:var(--accent)}
+.svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.svc-ic{
+  width:42px;height:42px;display:grid;place-items:center;font-size:21px;
+  background:var(--bg);border:1.5px solid var(--accent);border-radius:2px;
+}
+.svc-price{
+  font-family:"Space Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.04em;
+  color:var(--accent);text-transform:uppercase;
+  border:1.5px solid var(--line);border-radius:2px;padding:5px 9px;
+}
+.svc-title{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:17px;text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
+.svc-desc{color:#c1c1c8;font-size:13.5px;line-height:1.5;margin:9px 0 13px}
+.svc-inc{list-style:none;margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.svc-inc li{position:relative;padding-left:18px;font-size:12.5px;color:var(--ink-dim);font-family:"Space Mono",monospace;letter-spacing:.01em}
+.svc-inc li::before{content:"\25B8";position:absolute;left:0;color:var(--accent)}
+
+/* ---------- steps ---------- */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:16px;padding:16px 0;border-bottom:1.5px solid var(--line-2)}
+.step:last-child{border-bottom:none}
+.step-n{
+  flex:none;width:42px;height:42px;display:grid;place-items:center;
+  font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:17px;color:var(--accent-ink);
+  background:var(--accent);border:1.5px solid var(--accent-ink);border-radius:2px;
+  box-shadow:3px 3px 0 var(--extrude);
+}
+.step-t{font-family:"Chakra Petch",sans-serif;font-weight:600;font-size:16px;letter-spacing:.01em}
+.step-d{color:var(--ink-dim);font-size:13.5px;line-height:1.5;margin-top:3px}
+
+/* ---------- contact form ---------- */
+.form-card{
+  background:var(--bg-2);border:1.5px solid var(--ink);border-radius:3px;
+  padding:24px 22px;box-shadow:7px 7px 0 var(--accent);
+}
+.form-lead{color:#c1c1c8;font-size:14px;line-height:1.55;margin-bottom:20px}
+.field-label{
+  font-family:"Space Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-dim);margin-bottom:12px;
+}
+
+/* service tick-boxes */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+@media (max-width:440px){ .opts{grid-template-columns:1fr} }
+.opt{
+  display:flex;align-items:center;gap:10px;text-align:left;cursor:pointer;
+  background:var(--bg);border:1.5px solid var(--line);border-radius:3px;
+  padding:12px 13px;color:var(--ink);
+  font-family:"Chakra Petch",sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.01em;
+  box-shadow:3px 3px 0 var(--extrude-soft);
+  transition:transform .1s ease, box-shadow .1s ease, border-color .1s ease, background .1s ease;
+}
+.opt .opt-ic{font-size:17px;flex:none}
+.opt .opt-t{flex:1;line-height:1.15}
+.opt .opt-check{
+  flex:none;width:20px;height:20px;display:grid;place-items:center;border-radius:2px;
+  border:1.5px solid var(--line);color:transparent;font-size:13px;font-weight:700;transition:.12s ease;
+}
+.opt:hover{border-color:var(--accent);transform:translate(1px,1px);box-shadow:2px 2px 0 var(--extrude)}
+.opt.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%, var(--bg))}
+.opt.on .opt-check{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+/* text fields */
+.field{margin-top:13px}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--bg);color:var(--ink);
+  border:1.5px solid var(--line);border-radius:3px;padding:13px 14px;
+  font-family:"Outfit",sans-serif;font-size:14.5px;
+  transition:border-color .12s ease, box-shadow .12s ease;
+}
+.field textarea{resize:vertical;min-height:96px;line-height:1.5}
+.field select{appearance:none;-webkit-appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2386868f' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;color:var(--ink-dim)}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-dim)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%, transparent)}
+.field .invalid,.field input.invalid,input.invalid,select.invalid,textarea.invalid{border-color:#ff5d5d !important}
+
+.submit{margin-top:18px;justify-content:center;cursor:pointer;border:1.5px solid var(--accent-ink);width:100%}
+.submit[disabled]{opacity:.6;cursor:default}
+
+.form-status{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.02em;margin-top:12px;line-height:1.5}
+.form-status.err{color:#ff7a7a}
+.form-status.warn{color:#ffce5d}
+.form-status:empty{margin-top:0}
+.form-fine{font-family:"Space Mono",monospace;color:var(--ink-dim);font-size:11px;letter-spacing:.03em;margin-top:14px;text-align:center}
+
+/* success state */
+.success{text-align:center;padding:20px 6px}
+.success-ic{
+  width:60px;height:60px;margin:0 auto 18px;display:grid;place-items:center;font-size:30px;font-weight:700;
+  color:var(--accent-ink);background:var(--accent);border:1.5px solid var(--accent-ink);border-radius:3px;
+  box-shadow:5px 5px 0 var(--extrude);
+}
+.success h3{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:8px}
+.success p{color:var(--ink-dim);font-size:14px;max-width:320px;margin:0 auto;line-height:1.55}
+
+/* footer links */
+.foot-links{justify-content:center;margin:16px 0 14px}
+
+@media (max-width:420px){
+  .headline-lg{font-size:19px}
+  .form-card{box-shadow:5px 5px 0 var(--accent)}
+}

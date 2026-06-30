@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Streamer Services</title>
+<meta name="description" content="Landing pages, Telegram, Discord and Kick profiles for streamers — branded, fast, fully yours." />
+<meta name="theme-color" content="#53FC18" />
+
+<!-- Link preview when shared on Discord / Telegram / X -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Streamer Services — pages, bots, servers, profiles" />
+<meta property="og:description" content="I build the complete streamer command center. Branded, fast, fully yours." />
+<meta name="twitter:card" content="summary" />
+
+<!-- inline SVG favicon (no extra file, no 404) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0b'/%3E%3Crect x='6' y='13' width='20' height='10' rx='3' fill='none' stroke='%2353FC18' stroke-width='2'/%3E%3Ccircle cx='12' cy='18' r='1.6' fill='%2353FC18'/%3E%3Ccircle cx='20' cy='18' r='1.6' fill='%2353FC18'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Mono:wght@400;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+  <div class="fx" aria-hidden="true"></div>
+
+  <main class="wrap portfolio">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="avatar" id="avatar"></div>
+      <div class="kicker"><span class="pulse"></span> <span id="kicker">Streamer Services</span></div>
+      <h1 class="name" id="brand"></h1>
+      <p class="tagline" id="tagline"></p>
+      <p class="headline-lg" id="headline"></p>
+      <p class="intro" id="intro"></p>
+      <div class="stats" id="stats"></div>
+    </header>
+
+    <div class="ticker" id="ticker" aria-hidden="true"></div>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section">
+      <div class="label">What I Build</div>
+      <div class="svc-grid" id="services"></div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="section">
+      <div class="label">How It Works</div>
+      <div class="steps" id="steps"></div>
+    </section>
+
+    <!-- ===== WHY ME ===== -->
+    <section class="section">
+      <div class="label">Why Work With Me</div>
+      <div class="chips" id="why"></div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section">
+      <div class="label">Start a Project</div>
+      <div class="form-card" id="formCard">
+        <p class="form-lead">Tick what you want, tell me about your stream, and I'll get back to you.</p>
+        <form id="contactForm" novalidate>
+
+          <div class="field-label">Which services?</div>
+          <div class="opts" id="opts"></div>
+          <div class="form-status err" id="optErr"></div>
+
+          <div class="field">
+            <input type="text" id="fName" name="name" placeholder="Your name or handle" autocomplete="name" />
+          </div>
+          <div class="field">
+            <input type="text" id="fContact" name="contact" placeholder="Best way to reach you — Telegram / Discord / email" />
+          </div>
+          <div class="field">
+            <select id="budget" name="budget"></select>
+          </div>
+          <div class="field">
+            <textarea id="fMsg" name="message" rows="4" placeholder="Tell me about your stream — platform, niche, what you need…"></textarea>
+          </div>
+
+          <button type="submit" class="btn primary submit" id="submitBtn">
+            <span class="ic">&#9993;</span><span>Send request</span><span class="arrow">&rarr;</span>
+          </button>
+          <div class="form-status" id="formStatus"></div>
+          <p class="form-fine">No spam. Your details only reach me.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="foot">
+      <div class="big" id="footBrand">STUDIO</div>
+      <div class="chips foot-links" id="footLinks"></div>
+      <p><span id="footHandle"></span> · built for streamers, by a streamer</p>
+    </footer>
+  </main>
+
+  <noscript>
+    <p style="text-align:center;color:#86868f;font-family:monospace;padding:24px">
+      This page needs JavaScript enabled.
+    </p>
+  </noscript>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

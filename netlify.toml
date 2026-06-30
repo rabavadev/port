@@ -1,0 +1,4 @@
+# Static site - publish everything in this folder as-is.
+[build]
+  publish = "."
+  command = ""
