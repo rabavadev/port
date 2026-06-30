@@ -1,74 +1,27 @@
-# Streamer Services — Portfolio
+# Studio Portfolio (v2) — risograph editorial theme
 
-Your sales page. Shows what you build (landing pages, Telegram, Discord, full sites,
-Kick profile optimization, link management) and ends with a contact form where a
-client **ticks the services they want** and it lands **in your email inbox**.
+A second, distinct design for your streamer-services portfolio. Cream/ink/fluoro
+"risograph studio" look — deliberately different from your dark arcade landing pages,
+so the portfolio reads as a *studio with range*, not a clone of the one product.
+Each service shows a little CSS mockup (phone, Telegram, Discord, browser, Kick
+profile, link dashboard) so the variety is visible at a glance.
 
-Same arcade-terminal brand as your client landing pages. Pure static — hosts free
-on Cloudflare Pages, no backend, no database.
+Same data + same email form as the other theme — it reuses the same `config.js`.
 
----
-
-## 1. Connect the contact form to your email (60 seconds, do this once)
-
-The form uses **Web3Forms** (free, no account needed) to email you submissions.
-
-1. Go to **https://web3forms.com**
-2. Type the email address where you want submissions to arrive.
-3. They instantly email you an **Access Key** (looks like `a1b2c3d4-....`).
-4. Open **`config.js`** and paste it here:
-
-   ```js
-   web3formsKey: "PASTE-YOUR-ACCESS-KEY-HERE",
-   ```
-
-That's it. Every form submission now goes straight to that inbox, with the client's
-name, contact, the services they ticked, budget and message.
-
-> Until you add a real key, the form shows a friendly "not connected yet" notice
-> instead of failing. So you can test the page safely first.
-
----
+## 1. Connect the form to your email (once)
+1. Go to https://web3forms.com → enter your email → copy the **Access Key**.
+2. In `config.js` set: `web3formsKey: "YOUR-KEY"`.
+Done — every submission emails you the client's name, contact, ticked services,
+budget and message. Until then the form shows a "not connected yet" notice.
 
 ## 2. Make it yours
+Edit **`config.js`** only: `brand`, `accent` (the fluoro spot color), `headline`
+(wrap the highlight in `{curly braces}`), `intro`, `services`, `steps`, `why`,
+`stats`, `footerLinks`.
 
-Everything lives in **`config.js`** — edit only that file:
-
-- `brand` — your studio / personal name (shows as the big title)
-- `logo` — optional square image path, e.g. `"assets/logo.png"` (empty = first letter)
-- `accent` — your theme color (re-skins the whole page). Try `#7C5CFF`, `#FF4D4D`
-- `headline` / `intro` / `tagline` — your pitch
-- `services` — add / remove / reprice your offers (these also become the form tick-boxes)
-- `steps`, `why`, `stats` — process, selling points, proof numbers
-- `footerLinks` — your Telegram / Discord / email
-
-To add a logo image: drop the file in an `assets/` folder and set
-`logo: "assets/logo.png"`.
-
----
-
-## 3. Deploy on Cloudflare Pages
-
-1. Push this folder to a GitHub repo.
-2. Cloudflare → **Pages** → **Connect to Git** → pick the repo.
-3. Build settings: **Framework preset = None**, build command **empty**,
-   output directory **`/`** (root).
-4. Deploy. You get a live `*.pages.dev` link, or attach your own domain.
-
-Updates later = `git push`, redeploys in ~60s.
-
-(`netlify.toml` is included too if you ever want to drag-drop to Netlify as a backup.)
-
----
+## 3. Deploy (Cloudflare Pages)
+Push to a repo → Cloudflare Pages → Connect to Git → preset **None**, build empty,
+output `/`. Or drag-drop the folder to Netlify.
 
 ## Files
-
-| File | What it is |
-|------|-----------|
-| `index.html` | page shell |
-| `config.js` | **the only file you edit** — brand, services, prices, email key |
-| `app.js` | renders everything + handles the form (don't edit) |
-| `styles.css` | arcade-terminal base theme |
-| `portfolio.css` | portfolio-specific styles |
-| `_headers` | Cloudflare caching + security |
-| `netlify.toml` | backup-host config |
+index.html · studio.css · config.js (shared) · app.js · _headers · netlify.toml

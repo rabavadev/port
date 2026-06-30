@@ -12,7 +12,7 @@ const CONFIG = {
   accent:   "#53FC18",                // theme color. Try #7C5CFF, #FF4D4D, #18C3FC...
   kicker:   "Streamer Services",      // tiny label above the name
   tagline:  "// pages · bots · servers · profiles",
-  headline: "I build the complete streamer command center.",
+  headline: "I build the complete streamer {command center}.",
   intro:    "Landing pages, Telegram, Discord and Kick profiles — branded, fast, and built to turn viewers into supporters. One clean setup, fully yours.",
 
   /* scrolling marquee words (keep short) */
