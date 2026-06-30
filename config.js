@@ -1,102 +1,110 @@
 /* =============================================================
    PORTFOLIO CONFIG  —  the ONLY file you normally edit.
-   Change your brand, services, prices and contact email here.
-   Everything on the page builds itself from this.
+   All your services live as "tracks" below. Each one shows on the
+   page AND becomes a tick-box in the contact form.
 ============================================================= */
 
 const CONFIG = {
 
   /* ---- IDENTITY ------------------------------------------------------ */
-  brand:    "RABAVA STUDIO",          // <-- your studio / personal brand name
-  logo:     "",                       // optional: "assets/logo.png" (square). Empty = first letter
-  accent:   "#53FC18",                // theme color. Try #7C5CFF, #FF4D4D, #18C3FC...
-  kicker:   "Streamer Services",      // tiny label above the name
-  tagline:  "// pages · bots · servers · profiles",
-  headline: "I build the complete streamer {command center}.",
-  intro:    "Landing pages, Telegram, Discord and Kick profiles — branded, fast, and built to turn viewers into supporters. One clean setup, fully yours.",
+  brand:    "RABAVA STUDIO",
+  logo:     "",                       // optional: "assets/logo.png" (square)
+  accent:   "#53FC18",                // the fluoro spot color (re-skins the page)
+  kicker:   "Streamer Services",
+  tagline:  "// the creator studio for streamers",
+  headline: "Everything a streamer needs to look {pro}.",
+  intro:    "Branded pages, profiles, overlays, automation and community setup — one studio, the full kit. Built fast, built to convert viewers into supporters, and fully yours.",
 
-  /* scrolling marquee words (keep short) */
-  ticker: ["Landing Pages", "Telegram", "Discord Servers", "Kick Profiles", "Link Systems", "Branding"],
+  ticker: ["Creator Hubs", "Kick Profiles", "Brand Kits", "Overlays", "AI Clips", "Discord", "Sponsor Kits"],
 
-  /* three quick proof stats under the hero */
   stats: [
     { n: "48h",  l: "Avg delivery" },
     { n: "100%", l: "Yours to own" },
-    { n: "USDT", l: "Easy payment" },
+    { n: "7",    l: "Service tracks" },
   ],
 
-  /* ---- SERVICES -----------------------------------------------------
-     These render as cards AND as the tick-boxes in the contact form.
-     id must be unique. price is just text — write anything.            */
+  /* ---- SERVICES (TRACKS) --------------------------------------------
+     Grouped so a client picks fast. `featured:true` = the top pick.
+     Edit / reprice freely. `id` must stay unique (drives the mockup).  */
   services: [
     {
-      id: "landing",
+      id: "hub",
       icon: "🎮",
-      title: "Streamer Landing Page",
-      price: "from $25",
-      desc: "A premium link-in-bio that beats Linktree — donations, crypto with QR, socials and live alerts, all in your brand.",
-      includes: ["Custom branded design", "Crypto wallets + QR codes", "All your links in one place", "Mobile-first, lightning fast"],
-    },
-    {
-      id: "telegram",
-      icon: "✈️",
-      title: "Telegram Setup",
-      price: "from $15",
-      desc: "A channel that pings every follower the second you go live, with your links and bonus codes pinned up top.",
-      includes: ["Branded channel", "Pinned links + live alerts", "Optional menu bot", "Full setup + handover"],
-    },
-    {
-      id: "discord",
-      icon: "💬",
-      title: "Discord Server",
-      price: "from $20",
-      desc: "A full community server — roles, channels, welcome bot and a clean links hub, ready to grow from day one.",
-      includes: ["Channel + role layout", "Auto welcome + roles", "Links + announcements", "Moderation ready"],
-    },
-    {
-      id: "fullsite",
-      icon: "🌐",
-      title: "Full Website",
-      price: "from $80",
-      desc: "When one page isn't enough — a bigger multi-section site with schedule, sponsors, media and more.",
-      includes: ["Multi-section build", "Custom domain setup", "Sponsor / media sections", "Built to scale"],
+      title: "Creator Hub",
+      price: "$80–300",
+      featured: true,
+      tagline: "The flagship — replaces Linktree",
+      desc: "A branded mini-site that makes you look like a serious creator: donations, crypto, live status, goals and every link in one fast, mobile-perfect page.",
+      includes: ["Custom homepage", "Donations + crypto/QR", "Live status + goals", "All socials + Discord", "Fully branded", "Mobile + fast"],
     },
     {
       id: "kick",
       icon: "⚡",
-      title: "Kick Profile Optimization",
-      price: "from $15",
-      desc: "Make your Kick page actually convert — panels, bio, branding and a layout that turns visitors into followers.",
-      includes: ["Profile panels + bio", "Branding pass", "Links + socials wired", "Conversion-first layout"],
+      title: "Kick Profile Makeover",
+      price: "from $40",
+      desc: "Turn an empty Kick page into a real channel — banner, avatar, bio, about, panels and an offline screen, all on-brand.",
+      includes: ["Banner + avatar", "Bio + about", "Profile panels", "Offline screen", "Branding pass"],
     },
     {
-      id: "links",
-      icon: "🔗",
-      title: "Link Management",
-      price: "$5 / month",
-      desc: "Links rotate or get banned? I swap them everywhere in minutes and send you a monthly clicks report.",
-      includes: ["Tracked short links", "Instant swaps when links die", "Monthly clicks report", "Page never re-touched"],
+      id: "brand",
+      icon: "🎨",
+      title: "Brand & Identity Kit",
+      price: "from $60",
+      desc: "Not just graphics — an identity. Logo, colors, fonts, your creator voice and ready-to-paste bios for every platform.",
+      includes: ["Logo", "Colors + fonts", "Creator voice", "Social bios", "Usage guide"],
+    },
+    {
+      id: "overlays",
+      icon: "📺",
+      title: "Overlays & Stream Assets",
+      price: "from $50",
+      desc: "A clean, minimal overlay set plus the assets that make a channel feel finished — screens, alerts, panels, emotes and badges.",
+      includes: ["Starting / BRB / Offline / Ending", "Webcam frame + alerts", "Panels + chat box", "Emotes + sub badges"],
+    },
+    {
+      id: "content",
+      icon: "🤖",
+      title: "Content & AI Automation",
+      price: "from $70",
+      desc: "Turn one stream into a content machine: VOD → Shorts and TikToks with hooks and captions, AI titles and descriptions, and auto social posting.",
+      includes: ["VOD → Shorts / TikToks", "Auto captions + hooks", "AI titles + descriptions", "Social auto-posting", "Notify automation"],
+    },
+    {
+      id: "community",
+      icon: "💬",
+      title: "Community & Links",
+      price: "from $20",
+      desc: "Where your audience gathers — a set-up Discord server and a Telegram channel that pings on live, plus tracked links you control.",
+      includes: ["Discord server setup", "Telegram + live alerts", "Tracked short links", "Monthly clicks report"],
+    },
+    {
+      id: "website",
+      icon: "🌐",
+      title: "Full Site & Sponsor Kit",
+      price: "from $150",
+      desc: "When one page isn't enough — a multi-section site with videos, sponsors, merch and a press/media kit that lands real deals.",
+      includes: ["Multi-section site", "Videos + live status", "Sponsors + merch", "Press / media kit", "Audience stats"],
     },
   ],
 
   /* ---- HOW IT WORKS -------------------------------------------------- */
   steps: [
-    { t: "Tell me what you need", d: "Pick your services below and send your links, colors and handle." },
-    { t: "I build it",           d: "Branded, tested and ready — usually within 48 hours." },
-    { t: "Go live",              d: "Deployed to a fast host with your own link. You own it fully." },
-    { t: "I keep it running",    d: "Link swaps and updates whenever you need them." },
+    { t: "Pick your tracks", d: "Tick what you need below and send your handle, links and colors." },
+    { t: "I build it",       d: "Branded, tested and ready — usually within 48 hours." },
+    { t: "Go live",          d: "Deployed fast, on your own link. You own everything." },
+    { t: "I keep it running", d: "Swaps, updates and new assets whenever you need them." },
   ],
 
-  /* ---- WHY ME (chips) ------------------------------------------------ */
-  why: ["48h turnaround", "You own everything", "Crypto / USDT friendly", "Unlimited traffic", "You control your links", "Anti-Linktree design"],
+  /* ---- WHY ME -------------------------------------------------------- */
+  why: ["48h turnaround", "You own everything", "Crypto / USDT friendly", "One studio, full kit", "Anti-Linktree design", "Built by a streamer"],
 
   /* ---- CONTACT FORM -------------------------------------------------- */
-  budgets: ["Under $25", "$25 – $60", "$60 – $150", "$150+", "Not sure yet"],
+  budgets: ["Under $50", "$50 – $150", "$150 – $400", "$400+", "Not sure yet"],
 
-  /* HOW SUBMISSIONS REACH YOU BY EMAIL:
-     1. Go to https://web3forms.com  (free, no account)
-     2. Type the email you want submissions sent to → you get an Access Key instantly
-     3. Paste that key below. Done — every form goes straight to your inbox.        */
+  /* CONNECT THE FORM TO YOUR EMAIL (once):
+     1. https://web3forms.com → enter your email → copy the Access Key
+     2. paste it below. Every submission then emails you the client's
+        name, contact, the tracks they ticked, budget and message.       */
   web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",
   emailSubject: "🎮 New streamer project request",
 
@@ -110,5 +118,4 @@ const CONFIG = {
 
 };
 
-// expose for app.js (plain <script>, no build step)
 window.CONFIG = CONFIG;

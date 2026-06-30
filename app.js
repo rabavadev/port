@@ -46,12 +46,15 @@
     var w = $("#caps"); if (!w || !C.services) return;
     w.innerHTML = C.services.map(function (s, i) {
       var inc = (s.includes || []).map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("");
+      var tag = s.tagline ? '<div class="cap-tag">' + esc(s.tagline) + "</div>" : "";
       return '' +
-        '<article class="cap">' +
+        '<article class="cap' + (s.featured ? " feat" : "") + '">' +
+          (s.featured ? '<div class="cap-flag">★ Top pick</div>' : "") +
           '<div class="cap-body">' +
             '<div class="cap-num">' + pad(i + 1) + " / " + pad(C.services.length) + "</div>" +
             '<h3 class="cap-title">' + esc(s.title) +
               (s.price ? '<span class="cap-price">' + esc(s.price) + "</span>" : "") + "</h3>" +
+            tag +
             '<p class="cap-desc">' + esc(s.desc || "") + "</p>" +
             (inc ? '<div class="cap-inc">' + inc + "</div>" : "") +
           "</div>" +
@@ -62,16 +65,17 @@
 
   // CSS-built mini mockups per service id (visual proof of range)
   function mock(id) {
-    switch (id) {
-      case "landing": return '<div class="mock m-phone"><div class="av"></div><div class="nm"></div><div class="bar fill"></div><div class="bar"></div><div class="bar"></div></div>';
-      case "telegram": return '<div class="mock m-tg"><div class="hd"><div class="c"></div><div class="t"></div></div><div class="pin"><div class="l"></div><div class="l s"></div></div><div class="live">🔴 LIVE NOW</div></div>';
-      case "discord": return '<div class="mock m-dc"><div class="side"><i class="on"></i><i></i><i></i></div><div class="main"><div class="ch h"></div><div class="ch"></div><div class="ch a"></div><div class="ch"></div><div class="ch"></div></div></div>';
-      case "fullsite": return '<div class="mock m-web"><div class="top"><i></i><i></i><i></i><div class="url"></div></div><div class="body"><div class="hh"></div><div class="row"><b class="s"></b><b></b></div><div class="row"><b></b><b></b></div></div></div>';
-      case "kick": return '<div class="mock m-kick"><div class="ban"></div><div class="pf"><div class="av"></div><div class="nm"></div></div><div class="pan"><b class="s"></b><b></b><b></b><b></b></div></div>';
-      case "links": return '<div class="mock m-dash"><div class="r"><div class="k"></div><div class="b" style="--w:78%"></div></div><div class="r"><div class="k"></div><div class="b" style="--w:54%"></div></div><div class="r"><div class="k"></div><div class="b" style="--w:91%"></div></div><div class="r"><div class="k"></div><div class="b" style="--w:36%"></div></div></div>';
-      default: return '<div class="mock m-web"><div class="top"><i></i><i></i><i></i></div><div class="body"><div class="hh"></div></div></div>';
-    }
+  switch (id) {
+    case "hub": return '<div class="mock m-phone"><div class="av"></div><div class="nm"></div><div class="bar fill"></div><div class="bar"></div><div class="bar"></div></div>';
+    case "kick": return '<div class="mock m-kick"><div class="ban"></div><div class="pf"><div class="av"></div><div class="nm"></div></div><div class="pan"><b class="s"></b><b></b><b></b><b></b></div></div>';
+    case "brand": return '<div class="mock m-brand"><div class="logo">◐</div><div class="sw"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div><div class="type"><b class="aa">Aa</b><span class="l"></span><span class="l s"></span></div></div>';
+    case "overlays": return '<div class="mock m-ovl"><div class="cam"></div><div class="soon">STARTING<br>SOON</div><div class="alert">🔔 new follow</div><div class="chip"><i></i><i></i></div></div>';
+    case "content": return '<div class="mock m-clip"><div class="vod">VOD<span class="play">▶</span></div><div class="arr">→</div><div class="grid"><span></span><span></span><span></span><span></span><span></span><span></span></div></div>';
+    case "community": return '<div class="mock m-dc"><div class="side"><i class="on"></i><i></i><i></i></div><div class="main"><div class="ch h"></div><div class="ch"></div><div class="ch a"></div><div class="ch"></div><div class="ch"></div></div></div>';
+    case "website": return '<div class="mock m-web"><div class="top"><i></i><i></i><i></i><div class="url"></div></div><div class="body"><div class="hh"></div><div class="row"><b class="s"></b><b></b></div><div class="row"><b></b><b></b></div></div></div>';
+    default: return '<div class="mock m-web"><div class="top"><i></i><i></i><i></i></div><div class="body"><div class="hh"></div></div></div>';
   }
+}
 
   function renderSteps() {
     var w = $("#steps"); if (!w || !C.steps) return;
