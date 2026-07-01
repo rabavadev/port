@@ -15,12 +15,12 @@ const CONFIG = {
   headline: "Everything a streamer needs to look {pro}.",
   intro:    "Branded pages, profiles, overlays, automation and community setup — one studio, the full kit. Built fast, built to convert viewers into supporters, and fully yours.",
 
-  ticker: ["Creator Hubs", "Kick Profiles", "Brand Kits", "Overlays", "AI Clips", "Discord", "Sponsor Kits"],
+  ticker: ["Creator Hubs", "Kick Profiles", "Brand Kits", "Overlays", "AI Clips", "Discord", "Sponsor Kits", "Care Plans"],
 
   stats: [
     { n: "48h",  l: "Avg delivery" },
     { n: "100%", l: "Yours to own" },
-    { n: "7",    l: "Service tracks" },
+    { n: "8",    l: "Service tracks" },
   ],
 
   /* ---- SERVICES (TRACKS) --------------------------------------------
@@ -31,7 +31,7 @@ const CONFIG = {
       id: "hub",
       icon: "🎮",
       title: "Creator Hub",
-      price: "$80–300",
+      price: "$100–350",
       featured: true,
       tagline: "The flagship — replaces Linktree",
       desc: "A branded mini-site that makes you look like a serious creator: donations, crypto, live status, goals and every link in one fast, mobile-perfect page.",
@@ -73,7 +73,7 @@ const CONFIG = {
       id: "community",
       icon: "💬",
       title: "Community & Links",
-      price: "from $20",
+      price: "from $40",
       desc: "Where your audience gathers — a set-up Discord server and a Telegram channel that pings on live, plus tracked links you control.",
       includes: ["Discord server setup", "Telegram + live alerts", "Tracked short links", "Monthly clicks report"],
     },
@@ -84,6 +84,15 @@ const CONFIG = {
       price: "from $150",
       desc: "When one page isn't enough — a multi-section site with videos, sponsors, merch and a press/media kit that lands real deals.",
       includes: ["Multi-section site", "Videos + live status", "Sponsors + merch", "Press / media kit", "Audience stats"],
+    },
+    {
+      id: "care",
+      icon: "🛠️",
+      title: "Care Plan",
+      price: "from $15/mo",
+      tagline: "Keep it live, fresh and handled",
+      desc: "Ongoing hosting, unlimited link swaps, small content updates and a monthly clicks report — your page stays current without you lifting a finger.",
+      includes: ["Hosting + uptime", "Unlimited link swaps", "Content updates", "Monthly clicks report", "Priority support"],
     },
   ],
 
